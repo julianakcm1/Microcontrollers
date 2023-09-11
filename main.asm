@@ -6,12 +6,12 @@
 ; Definições de constantes para os botões
 .equ BOTAO_FECHAR_PORTA = 0
 .equ BOTAO_ABRIR_PORTA = 1
-.equ BOTAO_CHAMAR_TERREO = 0
-.equ BOTAO_CHAMAR_PRIMEIRO_ANDAR = 1
-.equ BOTAO_CHAMAR_SEGUNDO_ANDAR = 2
-.equ BOTAO_IR_TERREO = 0
-.equ BOTAO_IR_PRIMEIRO_ANDAR = 1
-.equ BOTAO_IR_SEGUNDO_ANDAR = 2
+.equ BOTAO_CHAMAR_TERREO = 0 ; externo
+.equ BOTAO_CHAMAR_PRIMEIRO_ANDAR = 1 ; externo
+.equ BOTAO_CHAMAR_SEGUNDO_ANDAR = 2 ; externo
+.equ BOTAO_IR_TERREO = 0 ; interno
+.equ BOTAO_IR_PRIMEIRO_ANDAR = 1 ; interno
+.equ BOTAO_IR_SEGUNDO_ANDAR = 2 ; interno
 
 ; Definições de constantes de tempo
 .equ TEMPO_PORTA_ABERTA= 5000  ; 5 segundos (em milissegundos)
