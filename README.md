@@ -3,12 +3,12 @@
 <img src="https://github.com/julianakcm1/Microcontrollers/assets/54086293/87d97993-e9fd-4dc4-a664-935755806701" width="100" height="100">
 
 # Microcontroladores <br>
-**Grupo C** <br>
+**Grupo C**<br>
 
 </div>
 
 <p align="center">
-  <a href="#-project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#-project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-description">Descrição</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tech">Tecnologias</a><br><br>
 </p>
