@@ -60,6 +60,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - SimulIDE 
 - Microchip Studio
+- VS Code
 - Git
 - Github
 
