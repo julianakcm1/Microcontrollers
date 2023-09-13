@@ -30,6 +30,9 @@
 .def temp = r16
 .def display = r17 ;current LED value
 
+#define clock 16.0e6 ;clock speed
+.equ baudRate 9600
+
 jmp reset
 .org OC1Aaddr
 jmp OC1A_Interrupt
@@ -53,7 +56,23 @@ reset:
   ldi temp, high(RAMEND)
   out SPH, temp
 
-  #define CLOCK 16.0e6 ;clock speed
+
+  sei
+
+interrupcao_externa:
+  ldi temp, (1 << ISC01) | (1 << ISC00) ; INT0
+  out EICRA, temp
+
+  ldi r16, (1 << INT0) | (1 << INT1) ; Habilitar interrupção externa INT0 e INT1
+  out EIMSK, temp
+
+  ret
+
+timers:
+  lds r16, TIMSK1
+  sbr r16, 1 <<OCIE1A
+  sts TIMSK1, r16
+
   .equ PRESCALE = 0b100 ;/256 prescale
   .equ PRESCALE_DIV = 256
   #define DELAY 1 ;seconds
@@ -77,4 +96,16 @@ reset:
   sts TCCR1B, temp ;start counter
   sei;
 
-loop:
+usart:
+  ;16 mhz clock speed, 9600 baud UBRR = 103
+
+  .cseg
+
+  .equ UBRRvalue = clock / (16 * baudRate) - 1
+
+  ldi temp, high (UBRRvalue) ;baud rate
+  sts UBRR0H, temp
+  ldi temp, low (UBRRvalue)
+  sts UBRR0L, temp
+
+  ret
